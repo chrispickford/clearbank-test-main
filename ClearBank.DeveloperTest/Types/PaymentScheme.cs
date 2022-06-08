@@ -1,9 +1,8 @@
-﻿namespace ClearBank.DeveloperTest.Types
+﻿namespace ClearBank.DeveloperTest.Types;
+
+public enum PaymentScheme
 {
-    public enum PaymentScheme
-    {
-        FasterPayments,
-        Bacs,
-        Chaps
-    }
+    FasterPayments = 1,
+    Bacs = 2,
+    Chaps = 3
 }

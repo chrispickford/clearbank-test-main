@@ -1,7 +1,17 @@
-﻿namespace ClearBank.DeveloperTest.Types
+﻿using JetBrains.Annotations;
+
+namespace ClearBank.DeveloperTest.Types;
+
+[PublicAPI]
+public sealed class MakePaymentResult
 {
-    public class MakePaymentResult
+    private MakePaymentResult(bool success)
     {
-        public bool Success { get; set; }
+        Success = success;
     }
+
+    internal static MakePaymentResult SuccessResult => new(true);
+    internal static MakePaymentResult FailureResult => new(false);
+
+    public bool Success { get; }
 }
